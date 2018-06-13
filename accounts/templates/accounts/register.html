@@ -1,14 +1,12 @@
-{% extends 'home/base.html' %}
+{% extends 'books/base.html' %}
 {% load bootstrap_tags %}
 {% block content %}
 
-<h3>Login</h3>
+<h3>Register Now!</h3>
 
 <form method="POST">
     {% csrf_token %}
    {{ form | as_bootstrap }}
-   
-  <p>Forgot your password? Click <a href="{% url 'password_reset' %}">here</a></p>
     <input type="submit" value="login"/>
 </form>
 
