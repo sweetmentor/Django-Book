@@ -1,11 +1,11 @@
 {% extends 'books/base.html' %}
 {% block content %}
-<h2>Welcome to Django</h2>
+<h2>Welcome To Our Book List</h2>
 
-{% for author in authors %}
-<h4>{{ author.name}}</h4>
+
+
 <ul>
-   {% for book in author.books.all %}
+   {% for book in books %}
        <li>{{ book.name }}</li>
        <li>{{ book.author }}</li>
        <li>{{ book.ISBN }}</li>
@@ -13,5 +13,5 @@
    {% endfor %}
 </ul>
 
-{% endfor %}
+
 {% endblock content %}
