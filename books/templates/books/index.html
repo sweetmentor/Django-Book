@@ -1,5 +1,6 @@
 {% extends 'books/base.html' %}
 {% block content %}
+
 <h2>Welcome To Our Book List</h2>
 
 
@@ -10,7 +11,8 @@
        <li>{{ book.author }}</li>
        <li>{{ book.ISBN }}</li>
        <li>{{ book.date }}</li>
-   {% endfor %}
+        <img src='{{ MEDIA_URL}}{{book.image}}'>
+        {% endfor %}
 </ul>
 
 
