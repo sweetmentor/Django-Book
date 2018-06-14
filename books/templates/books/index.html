@@ -7,13 +7,14 @@
 
 <ul>
    {% for book in books %}
-       <li>{{ book.name }}</li>
+       <h2>{{ book.name }}</h2>
        <li>{{ book.author }}</li>
        <li>{{ book.ISBN }}</li>
        <li>{{ book.date }}</li>
-        <img src='{{ MEDIA_URL}}{{book.image}}'>
+        <img src='{{ MEDIA_URL}}{{book.image}}' width='200px'>
         {% endfor %}
 </ul>
 
+<a href='{% url 'add_book' %}'>Add Book</a>
 
 {% endblock content %}
