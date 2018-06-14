@@ -6,7 +6,10 @@ from django.http import HttpResponse
 # Create your views here.
 
 def get_index(request):
-    books_items = Book.objects.all()     
+    if request.user.is_authenticated:
+        books_items = Book.objects.filter(owner=request.user) 
+    else:
+        books_items = []
     return render(request, "books/index.html", {'books': books_items})
     
 def add_book(request):
